@@ -1,11 +1,30 @@
 <template>
-	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link> |
-			<router-link to="/login">Login</router-link>
-		</div>
+	<div>
+		<Navbar />
 		<router-view />
 	</div>
 </template>
 
-<style lang="scss"></style>
+<script>
+import Navbar from './components/Navbar.vue'
+
+export default {
+	components: { Navbar },
+	mounted() {
+		this.$store.dispatch('loadCurrentUser')
+	},
+}
+</script>
+
+<style lang="scss">
+body {
+	min-height: 100vh;
+}
+.page-container__centerd {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	flex-direction: column;
+}
+</style>

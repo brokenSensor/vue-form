@@ -11,10 +11,10 @@ const routes = [
 		component: Home,
 	},
 	{
-		path: '/login',
-		name: 'Login',
+		path: '/auth/:type',
+		name: 'Auth',
 
-		component: () => import('../views/Login.vue'),
+		component: () => import('../views/AuthPage.vue'),
 	},
 ]
 
