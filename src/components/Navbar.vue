@@ -1,17 +1,23 @@
 <template>
 	<b-navbar fixed="top" type="dark" class="navbar">
 		<b-navbar-brand class="navbar__brand" to="/">Vue Form</b-navbar-brand>
-		<b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+		<b-navbar-toggle
+			class="navbar__toggle"
+			target="nav-collapse"
+		></b-navbar-toggle>
 
 		<b-collapse class="navbar__collapseble" id="nav-collapse" is-nav>
-			<b-navbar-nav>
-				<b-nav-item-dropdown v-if="user">
+			<b-navbar-nav class="navbar__nav">
+				<b-nav-item-dropdown v-if="user" class="navbar__dropdown">
 					<template #button-content>
 						<a>{{ user.email }}</a>
 					</template>
 					<b-dropdown-item @click="logout">Sign Out</b-dropdown-item>
 				</b-nav-item-dropdown>
-				<b-nav-item v-else to="/auth/login">Login</b-nav-item>
+
+				<b-nav-item v-else to="/auth/login" class="navbar__item"
+					>Login</b-nav-item
+				>
 			</b-navbar-nav>
 		</b-collapse>
 	</b-navbar>
