@@ -11,20 +11,9 @@ import Navbar from './components/Navbar.vue'
 export default {
 	components: { Navbar },
 	mounted() {
-		this.$store.dispatch('loadCurrentUser')
+		this.$store.dispatch('auth/loadCurrentUser')
 	},
 }
 </script>
 
-<style lang="scss">
-body {
-	min-height: 100vh;
-}
-.page-container__centerd {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	min-height: 100vh;
-	flex-direction: column;
-}
-</style>
+<style lang="scss"></style>

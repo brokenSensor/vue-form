@@ -79,15 +79,15 @@ export default {
 				: ''
 		},
 		Error() {
-			return this.$store.getters.parsedError
+			return this.$store.getters['auth/parsedError']
 		},
 		user() {
-			return this.$store.state.user
+			return this.$store.state.auth.user
 		},
 	},
 	methods: {
 		onSubmit() {
-			this.$store.dispatch(this.$props.type, {
+			this.$store.dispatch(`auth/${this.$props.type}`, {
 				email: this.email,
 				password: this.password,
 			})
